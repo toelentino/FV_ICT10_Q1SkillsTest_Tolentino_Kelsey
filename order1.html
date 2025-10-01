@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordering Form</title>
+
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+  <style>
+     body {
+    background-color: #ffffff;
+    font-family: "Times New Roman", Georgia, serif;
+    }
+
+    .topnav {
+      background-color: #dfdfdf;
+      overflow: hidden;
+    }
+
+    .topnav a {
+      float: left;
+      color: #000000;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #4596c9;
+      color: #000000;
+    }
+
+    .topnav a.active {
+      background-color: #4596c9;
+      color: white;
+    }
+
+    .header {
+      padding: 60px;
+      text-align: center;
+      background-image: url(https://i.pinimg.com/736x/7b/e9/0c/7be90c95f767c2e070c84f25750dcb35.jpg);
+      background-repeat: no-repeat;
+      background-size: 500px;
+      background-position: right;
+      height: 270px;
+      color: #000000;
+      font-size: 22px;
+    }
+
+    .full-page {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      margin: 20px 0;
+    }
+
+    .form-container {
+      width: 80%;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .checkbox-group {
+      margin: 15px 0;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+      display: block;
+    }
+
+    button {
+      background-color: #4596c9;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #337aa5;
+    }
+
+    #output {
+      width: 734px;
+      height: 261px;
+      object-fit: cover;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topnav">
+    <a class="active" href="index4.html">Home</a>
+    <a class="active" href="news.html">News</a>
+    <a class="active" href="order1.html">Ordering Form</a>
+    <a class="active" href="about.html">About</a>
+  </div>
+
+  <div class="header">
+    <h1>Order from The Pining Shelf</h1>
+    <p>Choose your favorite manga, and we’ll prepare your order!</p>
+  </div>
+
+  <div class="form-container">
+    <form>
+      <label for="cust_name">Name:</label>
+      <input type="text" id="cust_name" required>
+
+      <label for="cust_address">Address:</label>
+      <input type="text" id="cust_address" required>
+
+      <label for="cust_contact">Contact Number:</label>
+      <input type="tel" id="cust_contact" required>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="One Piece"> One Piece (₱599)</label>
+        <label><input type="checkbox" value="Fruits Basket"> Fruits Basket (₱500)</label>
+        <label><input type="checkbox" value="Bleach"> Bleach (₱599)</label>
+        <label><input type="checkbox" value="Horimiya"> Horimiya (₱550)</label>
+        <label><input type="checkbox" value="Kimi ni Todoke"> Kimi ni Todoke (₱500)</label>
+      </div>
+
+      <button type="button" py-click="process_order">Submit Order</button>
+    </form>
+
+    <div id="output"></div>
+  </div>
+
+  <script type="py" src="order1.py"></script>
+</body>
+</html>
